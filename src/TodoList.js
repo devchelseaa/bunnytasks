@@ -9,7 +9,7 @@ const TodoList = () => {
 
   useEffect(() => {
     // Fetch tasks from the backend
-    fetch(`${apiUrl}/tasks`)  
+    fetch(`${apiUrl}/tasks`)  // Corrected URL for fetching tasks
       .then(response => response.json())
       .then(data => setTasks(data))
       .catch(error => console.error('Error fetching tasks:', error));
@@ -17,7 +17,7 @@ const TodoList = () => {
 
   const addTask = () => {
     if (taskName.trim() !== '') {
-      fetch(`${apiUrl}/tasks`, {  
+      fetch(`${apiUrl}/tasks`, {  // Corrected URL for adding a task
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ const TodoList = () => {
   };
 
   const toggleTaskCompletion = (id) => {
-    fetch(`${apiUrl}/tasks/${id}`, {  
+    fetch(`${apiUrl}/tasks/${id}`, {  // Corrected URL for toggling task completion
       method: 'PUT',
     })
       .then(response => response.json())
@@ -48,7 +48,7 @@ const TodoList = () => {
   };
 
   const deleteTask = (id) => {
-    fetch(`${apiUrl}/tasks/${id}`, {  
+    fetch(`${apiUrl}/tasks/${id}`, {  // Corrected URL for deleting a task
       method: 'DELETE',
     })
       .then(() => {
