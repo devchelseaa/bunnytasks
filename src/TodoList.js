@@ -5,7 +5,7 @@ const TodoList = () => {
   const [taskName, setTaskName] = useState('');
 
   // Use API URL defined in .env file
-  const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000'; // Base URL only, without '/tasks'
+  const apiUrl = 'https://bunnytasks-0e684a5d384c.herokuapp.com/tasks';
 
   useEffect(() => {
     // Fetch tasks from the backend
