@@ -25,25 +25,25 @@ const taskSchema = new mongoose.Schema({
 const Task = mongoose.model('Task', taskSchema);
 
 // Routes
-app.get('/tasks', async (req, res) => {
+app.get('/bunnytasks/tasks', async (req, res) => {
   const tasks = await Task.find();
   res.json(tasks);
 });
 
-app.post('/tasks', async (req, res) => {
+app.post('/bunnytasks/tasks', async (req, res) => {
   const task = new Task({ name: req.body.name, completed: false });
   await task.save();
   res.json(task);
 });
 
-app.put('/tasks/:id', async (req, res) => {
+app.put('/bunnytasks/tasks/:id', async (req, res) => {
   const task = await Task.findById(req.params.id);
   task.completed = !task.completed;
   await task.save();
   res.json(task);
 });
 
-app.delete('/tasks/:id', async (req, res) => {
+app.delete('/bunnytasks/tasks/:id', async (req, res) => {
   const task = await Task.findByIdAndDelete(req.params.id);
   res.json(task);
 });
