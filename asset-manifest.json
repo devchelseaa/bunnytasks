@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/bunnytasks/static/css/main.fc099deb.css",
+    "main.js": "/bunnytasks/static/js/main.7f0f7418.js",
+    "static/js/453.81f383cb.chunk.js": "/bunnytasks/static/js/453.81f383cb.chunk.js",
+    "index.html": "/bunnytasks/index.html",
+    "main.fc099deb.css.map": "/bunnytasks/static/css/main.fc099deb.css.map",
+    "main.7f0f7418.js.map": "/bunnytasks/static/js/main.7f0f7418.js.map",
+    "453.81f383cb.chunk.js.map": "/bunnytasks/static/js/453.81f383cb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fc099deb.css",
+    "static/js/main.7f0f7418.js"
+  ]
+}
