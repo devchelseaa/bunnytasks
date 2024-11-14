@@ -1,0 +1,118 @@
+.App {
+  text-align: center;
+  background-color: #f2f2f2;
+}
+
+h1 {
+  padding: 0;
+  margin: 0;
+  padding-bottom: 0.8rem;
+  color: #363336;
+}
+
+h2 {
+  padding: 0;
+  margin: 0;
+  padding-bottom: 0.2rem;
+  size: 2rem;
+  color: #363336;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0; 
+  margin: 0;
+
+}
+
+.taskName {
+  background-color: #ffebe3;
+  border-radius: 0.45rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  padding-top: 0.1rem;
+  padding-bottom: 0.2rem;
+  margin: 0.5rem;
+}
+
+input {
+  border-radius: 0.5rem;
+  background-color: #ffebe3;
+  border: none;
+  padding: 0.25rem;
+  margin: 1rem;
+  color: #363336;
+  
+}
+
+button {
+  border-radius: 0.5rem;
+  background-color: #ffebe3;
+  padding: 0.3rem;
+  margin: 0.25rem;
+  color: #363336;
+}
+
+.bunny {
+  max-height: 3rem;
+  max-width: 3rem;
+  padding-bottom: 1rem;
+}
+
+.functionality {
+  display: grid;
+  grid-template-rows: auto;
+  grid-auto-rows: min-content;
+  align-items: center;
+  justify-items: center;
+}
+
+.tasksContainer {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+}
+
+.addTask {
+  background-color: #a79be1;
+  border-radius: 2rem;
+  min-width: 27rem;
+  max-width: fit-content;
+  padding: 0.5rem;
+}
+
+.currentTask {
+  background-color: #a1c2d0;
+  border-radius: 2rem;
+  min-width: 27rem;
+  max-width: fit-content;
+  padding: 1rem;
+}
+
+.completedTask {
+  background-color: #a1d0b1;
+  border-radius: 2rem;
+  min-width: 27rem;
+  max-width: fit-content;
+  padding: 1rem;
+  /* margin-top: 2rem; */
+}
+
+.timer {
+  background-color: #a1d0b1;
+  border-radius: 2rem;
+  min-width: 27rem;
+  padding: 0.5rem;
+}
+
+.video {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 2rem;
+}
+
+
+
+
+
