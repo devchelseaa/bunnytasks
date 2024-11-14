@@ -5,11 +5,11 @@ const TodoList = () => {
   const [taskName, setTaskName] = useState('');
 
   // Use API URL defined in .env file
-  const apiUrl = 'https://bunnytasks-0e684a5d384c.herokuapp.com';
+  const apiUrl = 'https://bunnytasks-0e684a5d384c.herokuapp.com/bunnytasks';
 
   useEffect(() => {
     // Fetch tasks from the backend
-    fetch(`${apiUrl}/tasks`)  // Add /tasks here
+    fetch(`${apiUrl}/tasks`)  
       .then(response => response.json())
       .then(data => setTasks(data))
       .catch(error => console.error('Error fetching tasks:', error));
@@ -17,7 +17,7 @@ const TodoList = () => {
 
   const addTask = () => {
     if (taskName.trim() !== '') {
-      fetch(`${apiUrl}/tasks`, {  // Add /tasks here
+      fetch(`${apiUrl}/tasks`, {  
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ const TodoList = () => {
   };
 
   const toggleTaskCompletion = (id) => {
-    fetch(`${apiUrl}/tasks/${id}`, {  // Add /tasks here
+    fetch(`${apiUrl}/tasks/${id}`, {  
       method: 'PUT',
     })
       .then(response => response.json())
@@ -48,7 +48,7 @@ const TodoList = () => {
   };
 
   const deleteTask = (id) => {
-    fetch(`${apiUrl}/tasks/${id}`, {  // Add /tasks here
+    fetch(`${apiUrl}/tasks/${id}`, {  
       method: 'DELETE',
     })
       .then(() => {
