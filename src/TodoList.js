@@ -4,9 +4,11 @@ const TodoList = () => {
   const [tasks, setTasks] = useState([]);
   const [taskName, setTaskName] = useState('');
 
+  const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000/tasks';
+
   useEffect(() => {
     // Fetch tasks from the backend
-    fetch('http://localhost:5000/tasks')
+    fetch(apiUrl)
       .then(response => response.json())
       .then(data => setTasks(data))
       .catch(error => console.error('Error fetching tasks:', error));
@@ -14,7 +16,7 @@ const TodoList = () => {
 
   const addTask = () => {
     if (taskName.trim() !== '') {
-      fetch('http://localhost:5000/tasks', {
+      fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -31,7 +33,7 @@ const TodoList = () => {
   };
 
   const toggleTaskCompletion = (id) => {
-    fetch(`http://localhost:5000/tasks/${id}`, {
+    fetch(`${apiUrl}/${id}`, {
       method: 'PUT',
     })
       .then(response => response.json())
@@ -45,7 +47,7 @@ const TodoList = () => {
   };
 
   const deleteTask = (id) => {
-    fetch(`http://localhost:5000/tasks/${id}`, {
+    fetch(`${apiUrl}/${id}`, {
       method: 'DELETE',
     })
       .then(() => {
