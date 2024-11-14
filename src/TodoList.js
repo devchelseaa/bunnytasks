@@ -4,11 +4,12 @@ const TodoList = () => {
   const [tasks, setTasks] = useState([]);
   const [taskName, setTaskName] = useState('');
 
-  const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000/tasks';
+  // Use API URL defined in .env file
+  const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000'; // Base URL only, without '/tasks'
 
   useEffect(() => {
     // Fetch tasks from the backend
-    fetch(apiUrl)
+    fetch(`${apiUrl}/tasks`)  // Add /tasks here
       .then(response => response.json())
       .then(data => setTasks(data))
       .catch(error => console.error('Error fetching tasks:', error));
@@ -16,7 +17,7 @@ const TodoList = () => {
 
   const addTask = () => {
     if (taskName.trim() !== '') {
-      fetch(apiUrl, {
+      fetch(`${apiUrl}/tasks`, {  // Add /tasks here
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -33,7 +34,7 @@ const TodoList = () => {
   };
 
   const toggleTaskCompletion = (id) => {
-    fetch(`${apiUrl}/${id}`, {
+    fetch(`${apiUrl}/tasks/${id}`, {  // Add /tasks here
       method: 'PUT',
     })
       .then(response => response.json())
@@ -47,7 +48,7 @@ const TodoList = () => {
   };
 
   const deleteTask = (id) => {
-    fetch(`${apiUrl}/${id}`, {
+    fetch(`${apiUrl}/tasks/${id}`, {  // Add /tasks here
       method: 'DELETE',
     })
       .then(() => {
@@ -59,39 +60,39 @@ const TodoList = () => {
   return (
     <div className='tasksContainer'>
       <div className='addTask'>
-      <h2>add task</h2>
-      <input
-        type="text"
-        value={taskName}
-        onChange={(e) => setTaskName(e.target.value)}
-        placeholder="enter task name"
-      />
-      <button onClick={addTask}>add task</button>
+        <h2>add task</h2>
+        <input
+          type="text"
+          value={taskName}
+          onChange={(e) => setTaskName(e.target.value)}
+          placeholder="enter task name"
+        />
+        <button onClick={addTask}>add task</button>
       </div>
       <div className='currentTask'>
-      <h2>current tasks</h2>
-      <ul>
-        {tasks.filter(task => !task.completed).map(task => (
-          <li key={task._id}>
-            <span className="taskName">{task.name}</span>
-            <button onClick={() => toggleTaskCompletion(task._id)}>complete</button>
-            <button onClick={() => deleteTask(task._id)}>delete</button>
-          </li>
-        ))}
-      </ul>
+        <h2>current tasks</h2>
+        <ul>
+          {tasks.filter(task => !task.completed).map(task => (
+            <li key={task._id}>
+              <span className="taskName">{task.name}</span>
+              <button onClick={() => toggleTaskCompletion(task._id)}>complete</button>
+              <button onClick={() => deleteTask(task._id)}>delete</button>
+            </li>
+          ))}
+        </ul>
       </div>
-      <div className='completedTask'> 
-      <h2>completed tasks</h2>
-      <ul>
-        {tasks.filter(task => task.completed).map(task => (
-          <li key={task._id}>
-            <span className="taskName">{task.name}</span>
-            <button onClick={() => toggleTaskCompletion(task._id)}>undo</button>
-            <button onClick={() => deleteTask(task._id)}>delete</button>
-          </li>
-        ))}
-      </ul>
-      </div> 
+      <div className='completedTask'>
+        <h2>completed tasks</h2>
+        <ul>
+          {tasks.filter(task => task.completed).map(task => (
+            <li key={task._id}>
+              <span className="taskName">{task.name}</span>
+              <button onClick={() => toggleTaskCompletion(task._id)}>undo</button>
+              <button onClick={() => deleteTask(task._id)}>delete</button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
