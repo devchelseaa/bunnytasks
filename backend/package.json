@@ -4,9 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "predeploy": "npm run build"
+    "start": "node server.js"
   },
-  "homepage": "https://github.com/devchelseaa/bunnytasks.git",
   "keywords": [],
   "author": "",
   "license": "ISC",

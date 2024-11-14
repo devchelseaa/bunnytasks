@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://chelcferguson:<rubberduck1233>@bunnytasks.gkhbp.mongodb.net/?retryWrites=true&w=majority&appName=BunnyTasks', {
+mongoose.connect('mongodb://localhost:27017/todolist', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() => console.log("Connected to MongoDB"))
