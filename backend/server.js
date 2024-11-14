@@ -48,4 +48,11 @@ app.delete('/api/tasks/:id', async (req, res) => {
   res.json(task);
 });
 
+// Serve React's index.html when accessing the root path
+app.use(express.static(path.join(__dirname, 'client/build')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
+
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
