@@ -1,10 +1,16 @@
-# Getting Started with Create React App
+Bunny Tasks
+Introduction
+This application is a full-stack Todo List that includes a frontend built with React and a backend built with Node.js and Express. The backend is connected to a MongoDB database. In this guide, we'll walk through the steps to run both the frontend and backend locally using Visual Studio Code (VS Code) and MongoDB.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Prerequisites
+Before you begin, ensure you have the following installed on your local machine:
 
-In the project directory, you can run:
+Visual Studio Code: Download Visual Studio Code
+Node.js: Download and install Node.js
+This will also install npm (Node Package Manager).
+MongoDB (local installation or use MongoDB Atlas for cloud):
+Install MongoDB locally or create a MongoDB cluster in MongoDB Atlas.
 
 ### `npm start`
 
@@ -24,47 +30,26 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Install frontend dependencies
+Run the following command to install the frontend dependencies
+npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Install Backend Dependencies
+Step 1: Navigate to the backend folder (if separate)
+In your project folder, you should have a directory for the backend (e.g., backend). If you have separate directories for backend and frontend, navigate into the backend directory:
 
-### `npm run eject`
+cd backend
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Install Node.js dependencies
+Run the following command to install the backend dependencies:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+npm install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Start the Frontend and Backend Server
+In each directory (frontend and backend) via the terminal run
+npm start
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Accessing the Application
+Frontend: Open your browser and go to http://localhost:3000. This will show the React Todo List app.
+Backend: Your backend will be running at http://localhost:5000 (or another port if specified in your server.js).
+The frontend should be able to interact with the backend API and MongoDB, allowing you to add tasks, mark tasks as completed, and delete tasks.
